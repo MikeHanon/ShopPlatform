@@ -36,11 +36,11 @@
     <p for="role-select" class="font-semibold text-gray-700">Je veux être :</p>
     <div class="flex justify-between items-center">
         <label for="freelance">Magasin
-            <input type="radio" value="1" id="shop" name="role_id">
+            <input type="radio" value="2" id="shop" name="role_id">
             <span class="checkmark"></span>
         </label>
         <label for="client">Client
-            <input type="radio" value="2" id="client" name="role_id">
+            <input type="radio" value="3" id="client" name="role_id">
             <span class="checkmark"></span>
         </label>
     </div>
