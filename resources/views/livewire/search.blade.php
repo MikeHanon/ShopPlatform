@@ -1,8 +1,10 @@
-<div class="inline-block relative w-60 mr-20">
-   <input class="bg-gray-200 text-gray-700 border-2 focus:outline-none placeholder-gray-500 px-2 py-1 rounded-full w-60" 
+<div x-data="{ open: true }" class="inline-block relative w-60 mr-20">
+   <input @click.away = " {open = false; @this.resetIndex(); } " @click= "{ open = true }" class="bg-gray-200 text-gray-700 border-2 focus:outline-none placeholder-gray-500 px-2 py-1 rounded-full w-60" 
    placeholder="Rechercher un magasin " type="text" wire:model="query"
    wire:keydown.arrow-down.prevent='incrementIndex'
    wire:keydown.arrow-up.prevent='decrementIndex'
+   wire:keydown.backspace='resetIndex'
+   wire:keydown.enter.prevent = "showShop" 
    >
 
    <svg class="w-5 h-5 text-gray-500 absolute top-0 right-0 mr-3 mt-2 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -11,7 +13,9 @@
 
   
     @if (strlen($query) > 2)
-    <div class="absolute border rounded bg-gray-100 text-md w-60 mt-1">
+    <div  class="absolute border rounded bg-gray-100 text-md w-60 mt-1" 
+    x-show = "open"
+    >
         @if (count($shops) > 0)
             
        

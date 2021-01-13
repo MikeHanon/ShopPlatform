@@ -31,6 +31,14 @@ class Search extends Component
         $this->selectedIndex--;
     }
 
+    public function showShop()
+    {
+            if($this->shops->isNotEmpty()){
+            return redirect()->route('shops.show', [$this->shops[$this->selectedIndex]['id']]);
+
+        }
+    }
+
     public function updatedQuery()
     {
         $words = '%' . $this->query . '%';
@@ -42,6 +50,11 @@ class Search extends Component
         
 
         
+    }
+
+    public function resetIndex()
+    {
+        $this->reset('selectedIndex');
     }
 
     public function render()

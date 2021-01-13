@@ -19,6 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/shops', [ShopController::class, 'index'])->name('shops.index');
+Route::get('/shops/{id}', [ShopController::class, 'show'])->name('shops.show');
 
 Route::get('/home', function(){
     return view('home');

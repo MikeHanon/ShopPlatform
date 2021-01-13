@@ -15,4 +15,11 @@ class ShopController extends Controller
             'shops' => $shops
         ]);
     }
+
+    public function show(Shop $id)
+    {
+        return view('shops.show', [
+            'shop' =>$id
+        ]);
+    }
 }
