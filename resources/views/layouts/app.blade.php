@@ -6,13 +6,13 @@
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
         <title>ShopPlatform</title>
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-       
+        @livewireStyles
     </head>
     <body>
       <div class="container mx-auto px-4">
      @include('partials.navbar')
       @yield('content')
       </div>
-
+      @livewireScripts
     </body>
 </html>

@@ -2,6 +2,7 @@
     <div>Logo</div>
 
     <nav>
+        <livewire:search />
         <a href="{{route('shops.index')}}" class="mr-5 hover:text-green-500">magasin</a>
         <a href="#" class="mr-5 hover:text-green-500">panier</a>
         @guest
