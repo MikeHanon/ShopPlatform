@@ -8,9 +8,9 @@ use Ramsey\Uuid\Type\Integer;
 
 class Search extends Component
 {
-    public String $query = '';
+    public  $query = '';
     public $shops = [];
-    public Int $selectedIndex = 0;
+    public  $selectedIndex = 0;
 
     public function incrementIndex()
     {

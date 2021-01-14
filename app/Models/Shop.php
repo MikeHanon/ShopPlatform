@@ -19,5 +19,19 @@ class shop extends Model
         return $query->where('status',1);
     }
 
+    public function likes()
+    {
+        return $this->belongsToMany(User::class);
+    }
+
+    public function isLiked()
+    {
+        if(auth()->check()){
+            return auth()->user()->likes->contains('id', $this->id);
+
+
+        }
+    }
+
     
 }
